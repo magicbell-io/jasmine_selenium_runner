@@ -79,7 +79,10 @@ module JasmineSeleniumRunner
     end
 
     def local_webdriver
-      Selenium::WebDriver.for(browser.to_sym, selenium_options)
+      client = Selenium::WebDriver::Remote::Http::Default.new
+      client.read_timeout = 60 * 10
+
+      Selenium::WebDriver.for(browser.to_sym, { http_client: client })
     end
 
     def selenium_options
