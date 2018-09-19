@@ -36,7 +36,7 @@ module JasmineSeleniumRunner
       @formatter = formatter
       @jasmine_server_url = jasmine_server_url
       @runner_config = runner_config
-      @browser = runner_config['browser'] || 'firefox'
+      @browser = runner_config['browser'] || 'chrome'
     end
 
     def make_runner
